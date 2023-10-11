@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'UiBank-FrontEnd-Updated'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_211DBA86ECED42A2B8075A7B879DA3A5 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_35B3A71E6E0F431AB1F142EFF0D5D04B }}
           package: .
