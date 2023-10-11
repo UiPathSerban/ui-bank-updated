@@ -1,0 +1,39 @@
+.card {
+  background-image: url("../../../../assets/images/updated-images/Main_banner_3.png");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5em;
+  margin-top: 2em;
+}
+
+.card-header {
+  background: transparent;
+  border: none;
+}
+
+.result-container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 3em 0;
+}
+
+.form-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.form-group {
+  flex: 0 1 50em;
+}
+
+.form-button {
+  margin-left: 30px;
+  width: fit-content;
+}
+
+.form-button {
+  flex: 0 1 30em;
+  margin-top: 2em;
+}

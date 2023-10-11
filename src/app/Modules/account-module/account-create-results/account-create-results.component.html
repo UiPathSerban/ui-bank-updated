@@ -1,0 +1,37 @@
+<div class="card shadow-sm">
+  <div class="card-header uibank-gradient" style="float: left">
+    <a style="cursor: pointer" (click)="backButton()">
+      <span class="material-icons text-white">
+        arrow_back
+      </span>
+    </a>
+  </div>
+  <div class="card-body results-container">
+    <h1 class="text-center text-white header">
+      Congratulations!
+    </h1>
+    <h4 class="text-center text-white small-text">
+      You've been approved for a new account!
+    </h4>
+    <br>
+    <h4 class="text-center text-white small-text">
+      Your new account id is:
+      <span id="accountId" class=" text-white small-text">
+        {{accountId}}
+      </span>
+    </h4>
+    <h4 class="text-center text-white small-text">Account Name: <span id="accountName"
+        class="text-white small-text">{{friendlyName}}</span>
+    </h4>
+    <div class="text-center">
+      <div id="viewAccounts" class="text-center btn btn-white form-button" [routerLink]="['/accounts']">
+        View Your Accounts </div>
+    </div>
+    <ng-template #notApproved class="text-center">
+      <h1 class="text-center text-white">Sorry, at this time you were not approved for a new account.</h1>
+      <h4 class="text-center">
+        If you would like to learn more about why you weren't approved please reach out to our support team!'
+      </h4>
+    </ng-template>
+  </div>
+</div>

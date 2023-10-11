@@ -1,0 +1,100 @@
+.card {
+  background-image: url("../../../../assets/images/updated-images/Main_banner.png");
+}
+
+.card-header {
+  border: none;
+  background: transparent;
+}
+
+thead,
+tr,
+th {
+  border-radius: 0px;
+}
+
+table {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: top;
+  justify-content: space-between;
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.account-detail-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.account-options {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: normal;
+  justify-content: space-between;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.mat-table {
+  overflow: auto;
+  flex: 1 1 50em;
+}
+
+.mobile-label {
+  display: none;
+}
+
+.mobileTable {
+  display: none;
+}
+
+
+@media(max-width: 60em) {
+
+  .webTable {
+    display: none;
+  }
+
+  .mobileTable {
+    display: block;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+
+  .mobile-label {
+    width: 8em;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  .mat-row {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+  }
+
+  .mat-cell {
+    padding-left: 1em;
+  }
+}

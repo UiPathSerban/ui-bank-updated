@@ -1,0 +1,63 @@
+.card {
+  background-image: url("../../../../assets/images/updated-images/Main_banner_3.png") !important;
+}
+
+.card-header {
+  border: none;
+}
+
+.mat-container {
+  display: flex;
+  flex-flow: nowrap;
+}
+
+.filter-container {
+  display: flex;
+  width: 100%;
+}
+
+// .photo-background {
+//   background-image: url("../../../../assets/images/HelpPage.png");
+//   background-size: cover;
+//   background-position: center;
+// }
+
+.results-container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 3em 0;
+  padding: 2em 0;
+}
+
+.form-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: 2em;
+}
+
+.form-group {
+  flex: 0 1 50em;
+}
+
+.form-button {
+  flex: 0 1 30em;
+  margin-top: 2em;
+}
+
+.card {
+  margin-bottom: 5em;
+  margin-top: 2em;
+}
+
+.image-block {
+  padding: 7em 0em;
+}
+
+@media (max-width: 60em) {
+
+  .mobileTable {
+    display: block;
+  }
+}

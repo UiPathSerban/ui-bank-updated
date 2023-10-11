@@ -1,0 +1,34 @@
+<div class="card shadow-sm" style="margin: 1rem 0 4rem 0;">
+  <div class="container card-container">
+    <div class="text-center">
+      <div class="spacer"></div>
+      <h2 class="title">Options. Options. Options.</h2>
+      <h4 class="sub-text">Travel? Cash Back? Rewards? We have you covered!</h4>
+      <div class="spacer"></div>
+    </div>
+    <div class="options-container">
+      <div *ngFor="let option of options" class="cc-container card shadow-sm">
+        <div class="row d-flex flex-wrap justifiy-content-between inner-content">
+          <div class=" col-sm-12 col-md-8  justifiy-content-center align-items-end">
+            <div class="row align-items-end justify-content-center" style="margin-bottom: 0.5rem;">
+              <div class="col-md-4" style="width:fit-content;">
+                <img class="image-prop" [src]='option.image' />
+              </div>
+              <div class="col-md-10">
+                <h5 class="card-title">{{option.title}}</h5>
+              </div>
+            </div>
+            <div class="row-md-12 align-items-center">
+              <p>{{option.description}}</p>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 d-flex align-items-center justify-content-center">
+            <div class="btn btn-black" [routerLink]="['/credit-cards/apply']">
+              Apply Now ->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

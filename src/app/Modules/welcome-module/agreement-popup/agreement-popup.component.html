@@ -1,0 +1,27 @@
+<mat-dialog-content class="custom-dialog-content">
+    <div class="header">
+        <div class="header-icon">⚠️</div>
+        <div class="header-text">Important Notice</div>
+        <button mat-dialog-close class="close-button">&#10005;</button>
+    </div>
+    <div class="container">
+        <p class="medium-text">UiBank is an application used only for demo purposes. It doesn't require real data,
+            except for the email address, which will be used for official communications and password recovery purposes.
+        </p>
+        <button class="btn center-button btn-black" [mat-dialog-close]="true">I agree to the License Terms and
+            Accetable Use
+            Policies <strong>&rarr;</strong></button>
+        <p class="small-text text-black">
+            If you want your data deleted at any time, please fill in this <a
+                href="https://www.uipath.com/legal/personal-data">
+                form
+            </a>.
+        </p>
+        <p class="small-text text-black" style="margin-bottom: 1rem;">
+            Contact <a href="mailto:info@example.com">info@example.com</a> for more informations.
+        </p>
+    </div>
+</mat-dialog-content>
+<!-- <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions> -->

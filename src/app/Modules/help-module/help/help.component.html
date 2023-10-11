@@ -1,0 +1,31 @@
+<div class="help-container card shadow-sm">
+  <div class="text-center">
+    <br><br>
+    <h2 class="text-white header">Need Some Help?</h2>
+    <p class="text-white">Get in touch with our team!</p>
+  </div>
+  <form class="form-container form-box" #helpForm="ngForm" (ngSubmit)="sendContactEmail(helpForm)">
+    <div class="form-group">
+      <label class="uibank-label" for="fullName">Full Name</label>
+      <input type="text" class="form-control uibank-input" id="fullName" aria-describedby="fullName" name="fullName"
+        placeholder="Enter full name" />
+    </div>
+    <div class="form-group">
+      <label class="uibank-label" for="emailAddress">Email Address</label>
+      <input type="text" class="form-control uibank-input" id="emailAddress" aria-describedby="" name="emailAddress"
+        placeholder="Enter the email address" />
+    </div>
+    <div class="form-group">
+      <label class="uibank-label" for="message">Tell Us About Your Problem</label>
+      <textarea type="text" rows="5" cols="40" class="form-control uibank-input" id="message" aria-describedby="message"
+        name="message" placeholder="How can we help">
+      </textarea>
+    </div>
+    <div class="form-group center-button">
+      <button type="submit" class="form-button btn btn-xl btn-white" [routerLink]="['/help/confirmation']">
+        Contact Us
+      </button>
+
+    </div>
+  </form>
+</div>

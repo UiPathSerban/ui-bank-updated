@@ -1,0 +1,21 @@
+.card {
+    background-image: url('../../../../assets/images/updated-images/Main_banner_3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-header {
+    background: transparent;
+    border: none;
+
+}
+
+@media (max-width: 767px) {
+    .header {
+        font-size: 1.8rem;
+    }
+
+    h4.text-white {
+        font-size: 1.2em;
+    }
+}

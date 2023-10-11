@@ -1,0 +1,29 @@
+<div class="card shadow-sm">
+    <div class="card-header" style="float: left">
+        <a style="cursor: pointer" (click)="backButton()">
+            <span class="material-icons text-white">
+                arrow_back
+            </span>
+        </a>
+    </div>
+    <div class="card-body form-box-smooshed">
+        <div class="spacer"></div>
+        <div class="sm-spacer"></div>
+        <div *ngIf="this.rate != 0; else notApproved" class="text-center">
+            <h1 class="text-center text-white header">Your transfer was successful!</h1>
+            <div class="spacer"></div>
+            <h4 class="text-center text-white">Your money is available immediately.</h4>
+            <div class="spacer"></div>
+        </div>
+        <ng-template #notApproved class="text-center">
+            <h1 class="text-center text-white">Sorry, at this time you have not been approved for a loan.</h1>
+            <div class="spacer"></div>
+            <h4 class="text-center text-white">
+                You must be at least 18 years old for a loan and the loan must not exceed 100k.
+            </h4>
+            <div class="spacer"></div>
+        </ng-template>
+        <div class="spacer"></div>
+    </div>
+</div>
+<div class="spacer"></div>

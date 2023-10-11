@@ -1,0 +1,82 @@
+::ng-deep .cdk-overlay-pane {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-dialog-content {
+    border-radius: 0;
+    padding: 0px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FA4616;
+    /* Orange color */
+    color: white;
+    padding: 2rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.header-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.header-text {
+    font-size: 2rem;
+}
+
+.container {
+    text-align: center;
+}
+
+.medium-text {
+    color: black;
+    font-size: 1.4rem !important;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    padding: 0 2rem;
+    margin-botton: 3rem;
+}
+
+.center-button {
+    display: block;
+    margin: 3rem auto;
+}
+
+.small-text {
+    font-size: 14px;
+    text-align: center;
+}
+
+.small-text a {
+    color: blue;
+    text-decoration: none;
+}
+
+.small-text a:hover {
+    text-decoration: underline;
+}
+
+mat-dialog-content {
+    border-radius: 0px;
+}
+
+.close-button {
+    position: absolute;
+    top: auto;
+    right: 3%;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

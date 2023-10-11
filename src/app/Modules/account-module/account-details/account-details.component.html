@@ -1,0 +1,167 @@
+<div class="containter">
+  <div class="card shadow-sm ">
+    <div class="card-header uibank-gradient">
+      <a style="cursor: pointer" class="text-white" (click)="backButton()">
+        <span class="material-icons text-white">
+          arrow_back
+        </span>
+      </a>
+
+      <div class="account-card">
+        <div class="account-detail-containter">
+          <div class="text-white d-inline text-left">
+            <h3>
+              <strong>{{accountName}} - Transaction History</strong>
+
+            </h3>
+            <p>
+              <strong>
+                Current Account Balance:
+              </strong>
+            </p>
+            <h4>
+              <strong>
+                {{accountBalance | currency:'USD':'symbol':'.2-2'}}
+              </strong>
+            </h4>
+          </div>
+
+        </div>
+      </div>
+
+      <hr style="background-color: white" />
+
+      <!-- [routerLink]="['/accounts/dispute-transaction', this.accountID]"> -->
+      <div class="account-options">
+        <div class="btn text-white">
+          <div>
+            <a class="text-white" id="disputeTransaction" download="filename" [routerLink]="['/accounts/maintenance']">
+              Dispute Transaction
+            </a>
+          </div>
+        </div>
+        <div class="btn text-white">
+          <div>
+            <a class="text-white" id="transferMoney" download="filename" [routerLink]="['/accounts/transfer-money']">
+              Transfer Money
+            </a>
+          </div>
+        </div>
+        <div class="btn text-white">
+          <div>
+            <a class="text-white" id="downloadStatements" download="filename" (click)="generatePdf()">
+              Download Statement
+            </a>
+          </div>
+
+        </div>
+        <div class="btn text-white" style="text-decoration: underline;" id="downloadTransactions"
+          (click)="downloadCSV()">
+          Download Transactions
+        </div>
+      </div>
+    </div>
+    <div class="card-body" style="background-color: #FA4616;">
+
+      <div class="mat-elevation-z8 mat-container">
+        <div class="filter-container">
+          <mat-form-field style="width: 100%;">
+            <mat-label>Filter By Keyword</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+          </mat-form-field>
+        </div>
+        <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 table-striped webTable">
+
+          <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+            <td mat-cell *matCellDef="let transaction">
+              {{ transaction.date | date: 'shortDate' }}
+            </td>
+          </ng-container>
+
+          <!-- Transaction Amount Column -->
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef> Transaction Amount </th>
+            <td mat-cell *matCellDef="let transaction"
+              [style.color]="transaction.type === 'credit' ? 'green' : transaction.type === 'debit' ? 'red' : transaction.type === 'transfer' ? 'red' : 'black'">
+              {{ transaction.amount | currency:'USD':'symbol':'.2-2' }}
+            </td>
+          </ng-container>
+
+          <!-- Balance Column -->
+          <ng-container matColumnDef="balance">
+            <th mat-header-cell *matHeaderCellDef> Balance </th>
+            <td mat-cell *matCellDef="let transaction">
+              {{ transaction.balance | currency:'USD':'symbol':'.2-2' }}
+            </td>
+          </ng-container>
+
+          <!-- Description Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let transaction">
+              {{ transaction.description }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <!-- Mobile Table  -->
+
+        <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 mobileTable">
+
+          <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+            <mat-cell *matCellDef="let transaction">
+              <span class="mobile-label">Date:</span>
+              {{ transaction.date | date: 'shortDate' }}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Transaction Amount Column -->
+          <ng-container matColumnDef="amount">
+            <mat-header-cell *matHeaderCellDef> Transaction Amount </mat-header-cell>
+            <mat-cell *matCellDef="let transaction"
+              [style.color]="transaction.type === 'credit' ? 'green' : transaction.type === 'debit' ? 'red' : transaction.type === 'transfer' ? 'red' : 'black'">
+              <span class="mobile-label">Transaction Amount:</span>
+              {{ transaction.amount | currency:'USD':'symbol':'.2-2' }}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Balance Column -->
+          <ng-container matColumnDef="balance">
+            <mat-header-cell *matHeaderCellDef> Balance </mat-header-cell>
+            <mat-cell *matCellDef="let transaction">
+              <span class="mobile-label">Balance:</span>
+              {{ transaction.balance | currency:'USD':'symbol':'.2-2' }}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Description Column -->
+          <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+            <mat-cell *matCellDef="let transaction">
+              <span class="mobile-label">Description:</span>
+              {{ transaction.description }}
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+
+  </div>
+
+</div>

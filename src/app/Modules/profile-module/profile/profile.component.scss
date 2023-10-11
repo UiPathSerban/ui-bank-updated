@@ -1,0 +1,137 @@
+.card-header {
+  margin-top: 2rem;
+  border: transparent;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: transparent;
+
+}
+
+.header {
+  font-size: xxx-large;
+  font-weight: 500;
+}
+
+.row {
+  text-align: center;
+}
+
+.card {
+  padding: 0 3rem;
+  background-image: url("../../../../assets/images/updated-images/Main_banner_3.png");
+}
+
+.profile-container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 3em 0;
+  padding: 2em 2em;
+}
+
+.info-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: 2em;
+}
+
+.form-group {
+  flex: 0 1 50em;
+}
+
+.form-button {
+  flex: 0 1 30em;
+  margin-top: 2em;
+}
+
+.profile-image {
+  margin-top: 2em;
+}
+
+.image-block {
+  padding: 7em 0em;
+}
+
+
+
+.profile-info-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1em 0;
+  padding: 3em 3em;
+}
+
+.profile-detail-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: top;
+  justify-content: space-between;
+
+}
+
+.profile-photo-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  justify-content: space-between;
+  // padding-top: 3em;
+  height: 100%;
+}
+
+.profile-picture {
+  background-color: white;
+  border-radius: 50%;
+}
+
+
+.bottom-space {
+  margin-bottom: 3em;
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 767px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .small-text {
+    font-size: 0.9rem;
+  }
+
+  .profile-container {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .profile-info-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .profile-detail-container {
+    margin: 0.5rem 0;
+  }
+
+  .profile-photo-container {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .profile-picture {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+  }
+}

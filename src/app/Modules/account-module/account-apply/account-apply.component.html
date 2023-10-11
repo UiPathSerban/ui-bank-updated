@@ -1,0 +1,29 @@
+<div class="card shadow-sm">
+  <div class="card-header text-white" style="float: left">
+    <div>
+      <a style="cursor: pointer" (click)="backButton()">
+        <strong>
+          < </strong>
+      </a>
+    </div>
+  </div>
+  <div class="apply-container card-body">
+    <h1 class="text-center text-white">Apply For A New Account</h1>
+    <p class="text-center text-white">We need to gather some more details.</p>
+    <form class="form-box form-container" #accountApply="ngForm" (ngSubmit)="registerNewAccount(accountApply)">
+      <div class="form-group">
+        <label class="uibank-label" for="accountNickname">Give a Nickname to Your Account</label>
+        <input type="text" class="form-control uibank-input" id="accountNickname" ngModel name="accountNickname"
+          aria-describedby="accountNickname" placeholder="Enter a nickname for your new account">
+      </div>
+      <div class="form-group">
+        <label class="uibank-label" for="typeOfAccount">Type of Account</label>
+        <select class="form-control uibank-input" id="typeOfAccount" required type="text" ngModel name="typeOfAccount">
+          <option type="text" *ngFor="let specificType of types" [value]="specificType">{{specificType | titlecase}}
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn text-center btn-white form-button btn-xl">Apply</button>
+    </form>
+  </div>
+</div>

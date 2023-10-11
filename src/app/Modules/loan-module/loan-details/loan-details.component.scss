@@ -1,0 +1,29 @@
+.card {
+  background-image: url("../../../../assets/images/updated-images/Main_banner_3.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-header {
+  background: transparent;
+  border: none;
+}
+
+.hide {
+  display: none;
+}
+
+.text-success {
+  color: green;
+}
+
+.text-large {
+  color: blue;
+}
+
+@media(max-width: 767px) {
+  .card-body {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

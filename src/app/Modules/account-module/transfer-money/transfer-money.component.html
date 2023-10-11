@@ -1,0 +1,96 @@
+<div class="card shadow-sm">
+    <div class="card-header text-white">
+        <a class="text-white" style="cursor: pointer" (click)="backButton()">
+            <strong>
+                < </strong> Back
+        </a>
+    </div>
+
+    <h1 class="text-white text-center">
+        Transfer Money
+    </h1>
+
+    <div class=" transfer-container card-body">
+        <form class="form-box form-container" #setTransferForm="ngForm"
+            (ngSubmit)="setTransferFormFields(setTransferForm)">
+            <div class="form-group">
+                <label class="uibank-label" for="fromAccount">From</label>
+                <select class="form-control uibank-input" id="fromAccount" required [(ngModel)]="fromAccount"
+                    name="fromAccount">
+                    <option type="text" *ngFor="let account of currentAccounts" [ngValue]="account">
+                        {{account.friendlyName}}: {{account.id}} - {{account.balance | currency:'USD':'symbol':'.2-2'}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="uibank-label" for="toAccount">To</label>
+                <select class="form-control uibank-input" id="toAccount" required [(ngModel)]="toAccount"
+                    name="toAccount">
+                    <option type="text" *ngFor="let account of currentAccounts" [ngValue]="account">
+                        {{account.friendlyName}}: {{account.id}} - {{account.balance | currency:'USD':'symbol':'.2-2'}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="uibank-label" for="amount">Amount</label>
+                <input type="number" class="form-control uibank-input" ngModel name="amount" id="amountTransferred"
+                    [(ngModel)]="amountTransferred" placeholder="How much would you like to transfer?">
+            </div>
+            <div class="form-group" style="display: flex; justify-content: center;">
+                <button type="button" class="btn btn-white form-button" (click)="setFields()" data-toggle="modal"
+                    data-target="#exampleModal">Review</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal-edges uiBank-bg">
+                <h5 class="modal-title text-white" id="confirmTransferModal">
+                    <img class="refresh" [src]="imgSrc">
+                    Review Your Transfer
+                </h5>
+                <button type="button" class="close button-text-only" aria-label="Close" (click)="closeModal()">
+                    <span class="text-white" style="font-size: larger;" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-edges">
+                <p class="text-blue">
+                    <strong>
+                        From {{fromAccount.friendlyName}} - {{fromAccount.id}} <br />
+                    </strong>
+                    <span class="text-black" id="transferFromAccount">
+                        <strong>
+                            Current Balance: {{fromAccount.balance | currency:'USD':'symbol':'.2-2'}}
+                        </strong>
+                    </span>
+                </p>
+                <p class="text-blue">
+                    <strong>
+                        To {{toAccount.friendlyName}} - {{toAccount.id}} <br />
+                    </strong>
+                    <span class="text-black" id="transferToAccount">
+                        <strong>Current Balance: {{toAccount.balance | currency:'USD':'symbol':'.2-2'}}</strong>
+                    </span>
+                </p>
+                <p class="text-blue">
+                    <strong>
+                        Total amount to transfer: <br />
+                        <span id="transferAmount" style="color: black">
+                            {{amountTransferred | currency:'USD':'symbol':'.2-2'}}
+                        </span>
+
+                    </strong>
+                </p>
+            </div>
+            <div class="modal-footer modal-edges">
+                <button (click)="submitTransfer()" data-bs-dismiss="modal" type="button" class="btn btn-orange">Confirm
+                    Transfer <span>&rarr;</span> </button>
+                <button type="button" class="btn btn-black" (click)="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

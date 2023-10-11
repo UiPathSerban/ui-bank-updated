@@ -1,0 +1,23 @@
+<div class="card shadow-sm">
+  <div class="card-body ">
+    <a style="cursor: pointer; color:white;" (click)="backButton()">
+      < Back </a>
+        <div class="row justifiy-content-center card-container">
+          <h1 class="text-center title">Loan Lookup</h1>
+          <p class="text-center">Already have a loan? Enter in your loan ID, to retrieve the details!</p>
+          <form class="form-box form-container" #loanForm="ngForm" (ngSubmit)="getLoanInfo(loanForm)">
+            <div class="form-group">
+              <div class="row justify-content-center align-items-center">
+                <label for=" loanAmount" class="uibank-label">Loan ID:</label>
+                <input type="text" class="form-control uibank-input" id="quoteID" ngModel name="quoteID"
+                  aria-describedby="quoteID" placeholder="Enter loan ID here">
+              </div>
+              <div class="row justify-content-center align-items-center">
+                <button type="submit" class="btn btn-white form-button">Retrieve Loan
+                  Details</button>
+              </div>
+            </div>
+          </form>
+        </div>
+  </div>
+</div>

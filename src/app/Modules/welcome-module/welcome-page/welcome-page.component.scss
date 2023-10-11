@@ -1,0 +1,219 @@
+.gradient-row {
+  background-color: #abe9cd;
+  background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+}
+
+.jumbotron {
+  background-color: white;
+  border-radius: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.smaller {
+  height: 200px;
+}
+
+.margin-left {
+  margin-left: 80px !important;
+}
+
+.photo-background {
+  background-image: url("../../../../assets/images/updated-images/Main_banner.png");
+  background-size: 110%;
+  width: 100%;
+  height: fit-content;
+}
+
+.h2 {
+  font-size: 3.2rem !important;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.text-right {
+  text-align: right;
+  ;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: top;
+  justify-content: space-between;
+  margin: 1em 0 0 0;
+  background-color: transparent;
+
+}
+
+.container>* {
+  margin-top: 1em;
+}
+
+.statement {
+  flex-basis: 30em;
+  /* default value */
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 1em 1em;
+}
+
+
+.login-box {
+  min-height: 24rem;
+  flex-basis: 15em;
+  /* default value */
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 1em 0em;
+  margin-left: 1rem;
+}
+
+
+.text-container {
+  flex: 1 1 30em;
+  margin: 0em 1em;
+  // padding: 0 1.3rem;
+  padding: 3rem 4rem 0rem 4rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-text {
+  flex-basis: 30em;
+  /* default value */
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: left;
+  align-items: center;
+}
+
+.login-error {
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.get-started-button {
+  margin: 2em 0em;
+}
+
+.disclaimer {
+  font-size: 0.7rem;
+  color: #ffff88;
+
+}
+
+.spacing {
+  padding: 3rem 1rem;
+  margin: 2rem 0rem;
+  padding-top: 0.01rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  border-radius: 0.7rem;
+}
+
+.card-body {
+  margin: 0 1rem 0 1rem;
+}
+
+label {
+  margin-bottom: 0.7rem;
+}
+
+.uibank-input {
+  border-radius: 0px;
+  min-height: 3.3em;
+  border: 1px solid black;
+}
+
+.uibank-label {
+  color: white;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3.5em;
+  font-family: 'Inter';
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* General styles */
+.spacing {
+  padding: 3rem 1rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .agreementPannel {
+    width: auto;
+  }
+
+  h5.text-white {
+    font-size: 1rem;
+  }
+
+  .photo-background {
+    background-image: url("../../../../assets/images/updated-images/Main_banner_3.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .text-container {
+    padding: 0;
+  }
+
+  h2.text-white {
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem
+  }
+
+  .login-box,
+  .card-body {
+    margin: 0;
+  }
+
+  .login-text {
+    text-align: center;
+  }
+
+  .title {
+    width: 100% !important;
+  }
+
+  .col-md-6 {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: center;
+  }
+
+}

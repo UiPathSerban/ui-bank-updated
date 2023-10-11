@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="main">
+    <div class="card shadow-sm ">
+      <div class="card-body card-image">
+        <div class="card-header" style="background: transparent;">
+          <div class="card-header-item">
+            <h3 class="text-white xxx-large">
+              Welcome!
+            </h3>
+            <p class="text-white">
+              Here is your account summary:
+            </p>
+          </div>
+          <div class="btn btn-white card-header-item" [routerLink]="['/accounts/account-apply']">Apply For New Account
+          </div>
+        </div>
+        <div *ngIf="currentAccounts?.length === 0; else validAccounts">
+          <p class="text-center">
+            No accounts at this time, apply for a new account today!
+          </p>
+        </div>
+        <ng-template #validAccounts id="validAccount" class="account-container">
+          <div class="account-row" *ngFor="let account of currentAccounts; let index=index">
+            <div class="text-center">
+              <div class="account-card">
+                <div class="account-detail-container">
+                  <div class="account-detail-left text-left">
+                    <a class="text-black"
+                      [routerLink]="['account-details', account.id, account.balance, account.friendlyName]">
+                      <strong>{{account.friendlyName}}</strong>
+                    </a>
+                    <br />
+                    <span class="text-gray">
+                      ......{{trimID(account.id)}}
+                    </span>
+                  </div>
+                  <div class="account-detail-right text-right">
+                    Account Balance:
+                    <br />
+                    {{account.balance | currency:'USD':'symbol':'.2-2'}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="secondary text-center">
+    <div class="card bg-white shadow-sm text-center">
+      <div class="card-header uiBank-bg">
+        <h3 class="text-white text-max-bigger" style="margin-bottom: 1rem;">How can we help?</h3>
+      </div>
+      <div class="card-body bg-black">
+        <div class="help-card card">
+          <div class="card-header bg-black">
+            <h5 class="text-max-width text-white">
+              Payment Center
+            </h5>
+          </div>
+          <div class="card-body bg-black">
+            <a [routerLink]="['transfer-money']" class="btn apply-button">
+              Transfer Funds <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="help-card card">
+          <div class="card-header bg-black">
+            <h5 class="text-max-width text-white">
+              Loan Center
+            </h5>
+          </div>
+          <div class=" card-body">
+            <a id="applyForLoan" class="btn apply-button" [routerLink]="['/loans']">
+              Apply For A Loan <span>&rarr;</span>
+            </a>
+            <a id="applyForLoan" class="btn apply-button" [routerLink]="['/loans/lookup']">
+              Loan Status <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

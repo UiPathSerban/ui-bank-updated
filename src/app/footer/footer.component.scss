@@ -1,0 +1,58 @@
+footer {
+  background-color: white;
+  margin-bottom: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 0vh;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.version {
+  display: inline;
+  align-items: baseline;
+  bottom: 0%;
+}
+
+#version {
+  margin-top: 50%;
+  font-size: 10px;
+  color: lightgray;
+}
+
+.jumbotron {
+  background-color: white;
+  margin-bottom: 0;
+}
+
+.text-outline-box {
+  border: 2px solid black;
+}
+
+.disclaimer {
+  font-size: 0.7rem;
+  color: #ffcc00
+}
+
+.small-screen {
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .large-screen {
+    visibility: hidden;
+  }
+
+  .small-screen {
+    visibility: visible;
+  }
+
+  .div-middle {
+    display: none;
+  }
+
+  .div-right {
+    width: max-content;
+    padding-left: 5rem;
+  }
+}

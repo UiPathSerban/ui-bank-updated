@@ -1,0 +1,62 @@
+<div class="card shadow-sm">
+  <div class="card-header text-white" style="float: left">
+    <a style="cursor: pointer" (click)="backButton()">
+      <strong>
+        < </strong>
+    </a>
+  </div>
+
+  <div *ngIf="isValid; else notApproved" class="text-center">
+
+    <div class="card-body form-box-smooshed">
+
+      <div class="spacer"></div>
+      <div class="sm-spacer"></div>
+
+      <h1 class="text-center text-white">Your Loan Details </h1>
+
+      <div class="spacer"></div>
+
+      <div *ngIf="email === '' || email === undefined; else validEmail">
+        <h5 class="text-white">Email Address: <span id="email">N/A</span> </h5>
+      </div>
+      <ng-template #validEmail>
+        <h5 class="text-white">Email Address: <span id="email">{{email}}</span> </h5>
+      </ng-template>
+      <h5 class="text-white">Loan ID: <span id="quoteID">{{quoteID}}</span> </h5>
+      <h5 class="text-white">Term: <span id="term">{{term}}</span> </h5>
+      <h5 class="text-white ">Loan Amount: <span id="amount">$<span id="amountValue">{{amount}}</span></span> </h5>
+      <h5 class="text-white">Loan Rate: <span id="rate"><span id="rateValue">{{rate}}</span>%</span>
+      </h5>
+      <h5 class="text-white">Applicant Age: <span id="age">{{age}}</span> </h5>
+      <h5 class="text-white">Applicant Yearly Income: <span id="income">{{income}}</span>
+      </h5>
+
+      <div class="spacer"></div>
+
+    </div>
+
+
+  </div>
+  <ng-template #notApproved class="text-center">
+    <div class="card-body form-box-smooshed">
+      <div class="spacer"></div>
+      <br>
+      <h1 class="text-center text-white header">Sorry!
+      </h1>
+      <br>
+      <h4 class="text-center text-white">We weren't able to locate a matching loan ID.</h4>
+      <h4 class="text-center text-white">
+        Double check your loan ID and try again!
+      </h4>
+
+      <div class="sm-spacer"></div>
+      <div class="spacer"></div>
+
+    </div>
+
+  </ng-template>
+  <div class="spacer"></div>
+</div>
+
+<div class="spacer"></div>

@@ -1,0 +1,63 @@
+.card {
+    background-image: url('../../../../assets/images/updated-images/Main_banner_2.png');
+}
+
+.card-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: transparent;
+    border: none;
+}
+
+.photo-background {
+    background-size: cover;
+    background-position: center;
+}
+
+.transfer-container {
+    display: flex;
+    flex-flow: column nowrap;
+    //margin: 3em 0 1rem 0;
+    padding: 1em 0;
+}
+
+.form-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 2rem 2rem 2em;
+}
+
+.form-group {
+    flex: 0 1 50em;
+    max-width: 60%;
+}
+
+.form-button {
+    flex: 0 1 7em;
+    margin-top: 2em;
+}
+
+.card {
+    margin-bottom: 5em;
+    margin-top: 2em;
+}
+
+.image-block {
+    padding: 7em 0em;
+}
+
+.refresh {
+    max-height: 3rem;
+}
+
+.modal-edges {
+    border-radius: 0;
+}
+
+@media (max-width: 1150px) {
+    .form-group {
+        max-width: 100%;
+    }
+}

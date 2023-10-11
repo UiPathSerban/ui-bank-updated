@@ -1,0 +1,36 @@
+.card {
+  background-image: url("../../../../assets/images/updated-images/Main_banner_3.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.mobile-container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 3em 0;
+}
+
+.form-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 3em;
+}
+
+.form-group {
+  flex: 0 1 50em;
+}
+
+.text-container {
+  margin: 3em 0em;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin-bottom: 2em;
+  margin-top: 2em;
+}

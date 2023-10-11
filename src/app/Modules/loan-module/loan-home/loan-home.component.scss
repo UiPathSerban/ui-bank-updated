@@ -1,0 +1,154 @@
+h2 {
+  font-size: 3.1rem;
+  font-weight: 600;
+  color: white;
+
+}
+
+p {
+  font-weight: 300;
+  color: white;
+}
+
+
+.loan-container {
+  background-image: url('../../../../assets/images/updated-images/Main_banner.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 3em 0 8rem 0;
+
+
+}
+
+.jumbotron {
+  padding: 2rem 16% 1rem 16%;
+}
+
+.form-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 3em;
+}
+
+.form-group {
+  flex: 0 1 50em;
+}
+
+
+
+.text-container {
+  margin: 3em 0em;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+  margin: 3.5em 0em;
+}
+
+#applyButton {
+  margin-right: 2.5rem;
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 767px) {
+  .loan-container {
+    margin: 1rem 0;
+
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+
+  }
+
+  p {
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .text-container {
+    margin: 1em 0;
+  }
+
+  .form-button {
+    margin-top: 2em;
+  }
+
+  .form-button button {
+    display: block;
+    margin-bottom: 1rem;
+    /* Adjust spacing between buttons */
+  }
+
+  .loan-container {
+    padding: 2rem 2% 1rem 2%
+  }
+
+  .btn-white,
+  .btn-white-nofill {
+    min-width: fit-content !important;
+  }
+
+  .btn-group {
+    display: grid;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-white {
+    margin: 0 0 0 1.2rem;
+    text-align: center;
+  }
+
+  #applyButton {
+    margin-right: 0rem;
+  }
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+  .loan-container {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 3em 0 8rem 0;
+  }
+
+  .jumbotron {
+    padding: 2rem 16% 1rem 16%;
+  }
+
+  .text-container {
+    margin: 3em 0em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-button {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    // flex-flow: column wrap;
+    margin: 3.5em 0em;
+  }
+}

@@ -1,0 +1,37 @@
+<div class="card shadow-sm">
+  <div class="card-header uibank-gradient text-white" style="float: left">
+    <button class="back-button" [routerLink]="['/welcome']"><strong>
+        < </strong></button>
+  </div>
+  <div class="login-container card-body">
+    <h1 class="text-center text-white header">Login</h1>
+    <p class="text-center text-white small-text">Hello! Log in with your email.</p>
+    <form class="form-box form-container" #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+      <div class="form-group">
+        <label class="uibank-label" for="username">Username</label>
+        <input type="text" class="form-control uibank-input" id="username" [(ngModel)]="this.userLoginInfo.username"
+          name="username" aria-describedby="username" placeholder="Enter username">
+        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+      </div>
+      <div class="form-group">
+        <label class="uibank-label" for="password">Password</label>
+        <input type="password" class="form-control uibank-input" id="password" [(ngModel)]="this.userLoginInfo.password"
+          name="password" placeholder="Enter password">
+        <div *ngIf="this.failedLogin" class="text-white " style="color: red">
+          {{httpError.error.error.message}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <a [routerLink]="['/password-request']">
+          <small id="emailHelp" class="form-text text-muted text-white">Forgot Your Password?</small>
+        </a>
+
+        <a [routerLink]="['/register-account']">
+          <small id="emailHelp" class="form-text text-muted text-white">Register For Account</small>
+        </a>
+      </div>
+      <button type="submit" class="btn btn-white form-button">Sign In</button>
+    </form>
+  </div>
+</div>

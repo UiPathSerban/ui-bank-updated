@@ -1,0 +1,146 @@
+<div class="jumbotron jumbotron-fluid shadow-sm photo-background spacing">
+  <div class="container justify-content-center align-items-center">
+    <div *ngIf="this.authService.getLoggedInStatus(); else notLoggedIn">
+      <div class="row">
+        <div class="text-center">
+          <h2 class="text-white title">
+            Get started with a UiBank checking or savings account today!
+          </h2>
+          <h5 class="text-white">
+            *Open an new account in the next 30 days and receive $50 on us!
+          </h5>
+
+          <div class="spacer"></div>
+
+          <button type="submit" [routerLink]="['/accounts/account-apply']" class="btn btn-white btn-xl">Apply
+            Now</button>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #notLoggedIn>
+      <div class="card container login-box">
+
+        <div class="card-body">
+
+          <div class="sm-spacer"></div>
+          <form class="form-box" #loginForm="ngForm" (ngSubmit)="agreementConfirmation(loginForm)">
+            <div class="form-group">
+              <label class="uibank-label" for="username">Username</label>
+              <input type="text" class="form-control uibank-input" id="username"
+                [(ngModel)]="this.userLoginInfo.username" name="username" aria-describedby="username"
+                placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label class="uibank-label" for="password">Password</label>
+              <input type="password" class="form-control uibank-input" id="password"
+                [(ngModel)]="this.userLoginInfo.password" name="password" placeholder="Enter password">
+            </div>
+
+            <div *ngIf="this.failedLogin" style="color: white" class="login-error">
+              {{httpError.error.error.message}}
+            </div>
+            <div class="row d-flex justify-content-center">
+              <button type="submit" class="btn btn-white col-md-12">Sign
+                In</button>
+            </div>
+            <div class="sm-spacer"></div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-6 col-sm-6">
+                <a [routerLink]="['/password-request']" style="text-decoration:none">
+                  <small id="emailHelp" class="form-text text-white">Forgot Your Password?</small>
+                </a>
+              </div>
+              <div class=" col-md-6 col-sm-6 text-right">
+                <a [routerLink]="['/register-account']" style="text-decoration:none">
+                  <small id="emailHelp" class="form-text text-white">Register For Account</small>
+                </a>
+              </div>
+            </div>
+
+          </form>
+
+          <div class="sm-spacer"></div>
+        </div>
+      </div>
+      <div class="text-container welcome-text">
+        <div class="login-text">
+          <h2 class="text-white title" style="width: 110%;">
+            <strong>
+              Get started with a UiBank checking or savings account today!
+            </strong>
+          </h2>
+          <div class="sm-spacer"></div>
+          <h5 class="text-white" style="font-size: 0.9em; font-weight: normal; margin-top: 0.4rem;">
+            *Open an account in the next 30 days and receive $50 on us!
+          </h5>
+
+          <button type="submit" [routerLink]="['/register-account']"
+            class="btn btn-black btn-xl get-started-button "><strong>Get Started &rarr;</strong></button>
+          <!-- <p class="disclaimer">*UiBank is for testing purposes only and does not provide actual banking services</p> -->
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid shadow-sm uibank-gradient spacing" style="margin-bottom: 5rem;">
+  <div class="container">
+    <div class="card shadow-sm statement">
+      <div class="card-body">
+        <div class="sm-spacer"></div>
+        <img src="../../../../assets/images/updated-images/checking_and_savings accounts.svg" />
+        <div class="sm-spacer"></div>
+        <h4>Checking and Savings Accounts</h4>
+        <div class="sm-spacer"></div>
+        <p class="text-black">
+          Open up an account with us today and take advantage of our special offer! Every new acount created with us in
+          2020 gets $100 credit!
+        </p>
+        <div class="sm-spacer"></div>
+        <button type="submit" [routerLink]="['/accounts/account-apply']" class="btn apply-button">Apply For Account
+          <span>&rarr;</span></button>
+        <div class="sm-spacer"></div>
+      </div>
+    </div>
+    <!-- CREDIT CARD BOX -->
+    <div class="card shadow-sm statement">
+      <div class="card-body">
+        <div class="sm-spacer"></div>
+        <img src="../../../../assets/images/updated-images/credit_and_debit_cards.svg" />
+        <div class="sm-spacer">
+        </div>
+        <h4>Credit and Debit Cards</h4>
+        <div class="sm-spacer"></div>
+        <p class="text-black">
+          We offer a variety of cards to meet you needs! Whether your focus is cash back, travel perks, or low fees,
+          find the card that works for you!
+        </p>
+        <div class="sm-spacer"></div>
+        <button type="submit" [routerLink]="['/credit-cards']" class="btn apply-button">Learn More
+          <span>&rarr;</span></button>
+        <div class="sm-spacer"></div>
+      </div>
+    </div>
+    <!-- VIRTUAL COMPONENT GUIDE -->
+    <div class="card shadow-sm statement">
+      <div class="card-body">
+        <div class="sm-spacer"></div>
+        <img src="../../../../assets/images/updated-images/loans_with_outstanding_rates.svg" />
+        <div class="sm-spacer">
+        </div>
+        <h4>Loans With Outstanding Rates</h4>
+        <div class="sm-spacer"></div>
+        <p class="text-black">
+          We offer the most competitive rates on the market! No hidden fees, no gimmicks, just a dedicated team with
+          sgreat rates and service!
+        </p>
+        <div class="sm-spacer"></div>
+        <button type="submit" [routerLink]="['/loans']" class="btn apply-button">Apply For Loan
+          <span>&rarr;</span></button>
+        <div class="sm-spacer"></div>
+      </div>
+    </div>
+  </div>
+</div>

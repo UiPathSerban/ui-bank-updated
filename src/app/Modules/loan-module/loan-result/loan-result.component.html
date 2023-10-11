@@ -1,0 +1,57 @@
+<div class="card shadow-sm">
+  <div class="card-header uibank-gradient" style="float: left">
+  </div>
+  <div class="result-container card-body">
+    <div *ngIf="this.rate != 0; else notApproved" class="text-center">
+      <h1 class="text-center text-white header">
+        Congrats!
+      </h1>
+      <h1 class="text-center text-white">
+        You've been approved for a loan with UiBank!
+      </h1>
+      <h5 class="text-white">
+        With a fantastic rate of:
+      </h5>
+      <h4 class="text-black" id="rate">
+        <span id="rateValue">{{rate}}</span>% APR
+      </h4>
+      <h5 class="text-white">
+        Your new loan ID is:
+      </h5>
+      <h4 class="text-black" id="loanID">
+        {{loanID}}
+      </h4>
+
+      <div class="btn-group" role="group" aria-label="first group">
+        <button id="applyForNewLoanButton" title="applyForNewLoanButton" type="submit" [routerLink]="['/loans/apply']"
+          class="btn form-button btn-white btn-xl">Apply For Another Loan</button>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="second group">
+        <button id="loanHomePage" title="loanHomePage" type="submit" [routerLink]="['/loans/']"
+          class="btn form-button btn-black btn-xl">Back To Loan Center</button>
+      </div>
+    </div>
+    <ng-template #notApproved class="text-center">
+      <div class="text-center">
+        <div id="notApproved" title="notApproved">
+          <h1 class="text-center text-white header">Sorry, at this time you have not been approved for a loan.</h1>
+        </div>
+        <div id="failMessage">
+          <h4 class="text-center text-white">
+            You must be at least 18 years old for a loan and the loan must not exceed 100k.
+          </h4>
+        </div>
+        <div class="btn-group" role="group" aria-label="first group">
+          <button id="applyForNewLoanButton" title="applyForNewLoanButton" type="submit" [routerLink]="['/loans/apply']"
+            class="btn form-button btn-white btn-xl">Apply For Another Loan</button>
+        </div>
+
+        <div class="btn-group" role="group" aria-label="second group">
+          <button id="loanHomePage" title="loanHomePage" type="submit" [routerLink]="['/loans/']"
+            class="btn form-button btn-black btn-xl">Back To Loan Center</button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

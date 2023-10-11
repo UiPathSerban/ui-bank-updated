@@ -1,0 +1,60 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+  max-width: 75vh;
+}
+
+.nav-item {
+  font-size: large;
+}
+
+.container {
+  max-width: 70%;
+}
+
+.vertical-center {
+  height: 4.9rem;
+}
+
+.dropdown-menu {
+  border-radius: 0%;
+  margin-top: 1.4rem;
+  text-align: end;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  html {
+    font-size: 16px;
+  }
+
+  .dropdown-menu {
+    border: none;
+    margin-top: 1px;
+    text-align: start;
+  }
+
+  .dropdown-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}

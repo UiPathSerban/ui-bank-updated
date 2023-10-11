@@ -1,0 +1,51 @@
+// .mobile-label {
+//     display: none;
+// }
+
+// .mobileTable {
+//     display: none;
+// }
+
+.mobileTable {
+    display: none;
+}
+
+.mat-container {
+    background-image: url('../../../../assets/images/updated-images/Main_banner_3.png');
+}
+
+@media(max-width: 767px) {
+    .webTable {
+        display: none;
+    }
+
+    .mobileTable {
+        display: block;
+    }
+
+    .card-body {
+        padding: 0;
+    }
+
+    .mobile-label {
+        width: 8em;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    mat-header-row {
+        display: none;
+    }
+
+    mat-row {
+        flex-direction: column;
+        align-items: flex-start;
+        display: flex;
+        border-bottom: 1px solid grey !important;
+    }
+
+    mat-cell {
+        padding-left: 1em !important;
+        border-bottom: none;
+    }
+}
