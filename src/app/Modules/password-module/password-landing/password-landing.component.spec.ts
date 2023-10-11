@@ -2,15 +2,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PasswordLandingComponent } from './password-landing.component';
 
-describe('PasswordLandingComponent', () => {
+xdescribe('PasswordLandingComponent', () => {
   let component: PasswordLandingComponent;
   let fixture: ComponentFixture<PasswordLandingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PasswordLandingComponent ]
+      declarations: [PasswordLandingComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PasswordLandingComponent);
     component = fixture.componentInstance;

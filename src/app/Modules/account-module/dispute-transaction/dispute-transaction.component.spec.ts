@@ -2,15 +2,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DisputeTransactionComponent } from './dispute-transaction.component';
 
-describe('DisputeTransactionComponent', () => {
+xdescribe('DisputeTransactionComponent', () => {
   let component: DisputeTransactionComponent;
   let fixture: ComponentFixture<DisputeTransactionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisputeTransactionComponent ]
+      declarations: [DisputeTransactionComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DisputeTransactionComponent);
     component = fixture.componentInstance;

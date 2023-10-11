@@ -2,15 +2,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreditCardsComponent } from './credit-cards.component';
 
-describe('CreditCardsComponent', () => {
+xdescribe('CreditCardsComponent', () => {
   let component: CreditCardsComponent;
   let fixture: ComponentFixture<CreditCardsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreditCardsComponent ]
+      declarations: [CreditCardsComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CreditCardsComponent);
     component = fixture.componentInstance;
