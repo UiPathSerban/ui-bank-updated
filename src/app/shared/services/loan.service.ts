@@ -12,8 +12,8 @@ export class LoanService {
   currentAccounts: Observable<Account[]>;
   // loanURL: string = "https://uibank-api.azurewebsites.net/api";
   loanURL: string = environment.uiBankApiUrl;
-  quotesSuffix: string = "quotes/newquote";
-  getQuoteSuffix: string = "quotes/";
+  quotesSuffix: string = "/quotes/newquote";
+  getQuoteSuffix: string = "/quotes/";
   response: string;
 
   constructor(private http: HttpClient) {

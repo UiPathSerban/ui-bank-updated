@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoanService } from 'src/app/shared/services/loan.service';
 import { Loan } from 'src/app/shared/models/loan';
 import { NgForm } from '@angular/forms';
-import {Router} from '@angular/router'
+import { Router } from '@angular/router'
 import { Location } from '@angular/common'
 
 @Component({
@@ -33,7 +33,7 @@ export class LoanApplicationComponent implements OnInit {
     console.log(form.value);
     this.currentLoan = form.value;
     this.currentLoan.term = Number(this.currentLoan.term);
-    
+
     this.loanService.submitLoan(form.value).subscribe(reply => {
       this.response = reply;
       console.log(this.response.quoteid);
@@ -44,7 +44,7 @@ export class LoanApplicationComponent implements OnInit {
       }
 
       this.route.navigate(['loans/result', this.response.quoteid, this.response.rate, this.response.accepted]);
-      
+
 
     });
   }
