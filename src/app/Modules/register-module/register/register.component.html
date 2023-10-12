@@ -87,7 +87,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-md-6 uipath-group">
-                                <label class="uibank-label" for="age">Age <span
+                                <label class="uibank-label" for="age">Date of birth <span
                                         class="text-gray">(MM/DD/YY)</span></label>
                                 <input type="text" class="form-control uibank-input" id="age"
                                     [(ngModel)]="this.newUser.age" name="age" aria-describedby="age"
@@ -126,7 +126,9 @@
                     <input [(ngModel)]="agreementCheckBox" class="form-check-input" type="checkbox" id="agreeCheckbox"
                         [ngModelOptions]="{standalone: true}" style="margin-right: 1rem;">
                     <label class="form-check-label text-center" for="agreeCheckbox">
-                        I confirm that I agree to the License Terms and Acceptable Use Policies
+                        I confirm that I agree to the <a style="color: white;"
+                            href="https://www.uipath.com/legal/privacy-policy">Privacy
+                            Policy</a>
                     </label>
                 </div>
                 <div class="row justify-content-center">
