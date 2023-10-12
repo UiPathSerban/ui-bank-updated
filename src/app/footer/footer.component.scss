@@ -15,7 +15,7 @@ footer {
 }
 
 #version {
-  margin-top: 50%;
+  margin-top: 0%;
   font-size: 10px;
   color: lightgray;
 }
@@ -47,12 +47,16 @@ footer {
     visibility: visible;
   }
 
-  .div-middle {
-    display: none;
-  }
+
 
   .div-right {
     width: max-content;
     padding-left: 5rem;
+  }
+}
+
+@media (max-width:998px) {
+  .div-middle {
+    display: none;
   }
 }
