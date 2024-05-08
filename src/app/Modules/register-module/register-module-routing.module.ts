@@ -7,8 +7,8 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
 const routes: Routes = [
   {
     path: '', component: RegisterLandingComponent, children: [
-      { path: '', component: RegisterComponent },
-      { path: 'success/:username', component: RegisterSuccessComponent },
+      { path: '', title: 'UiBank-Register', component: RegisterComponent },
+      { path: 'success/:username', title: 'UiBank-Register success', component: RegisterSuccessComponent },
     ]
   }
 ];

@@ -5,10 +5,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
-  {path: '', component: ProfileLandingComponent, children:[
-    {path:'', component: ProfileComponent},
-    {path:'edit-profile', component: EditProfileComponent}
-  ]}
+  {
+    path: '', component: ProfileLandingComponent, children: [
+      { path: '', title: 'UiBank-Profile', component: ProfileComponent },
+      { path: 'edit-profile', title: 'UiBank-Edit profile', component: EditProfileComponent }
+    ]
+  }
 ];
 
 @NgModule({

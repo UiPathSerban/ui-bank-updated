@@ -7,10 +7,12 @@ import { PasswordRequestComponent } from './password-request/password-request.co
 import { PasswordRequestConfirmationComponent } from './password-request-confirmation/password-request-confirmation.component';
 
 const routes: Routes = [
-  {path:'', component: PasswordLandingComponent, children:[
-    {path:'', component:PasswordRequestComponent},
-    {path:'confirmation/:valid', component:PasswordRequestConfirmationComponent}
-  ]}
+  {
+    path: '', title: 'UiBank-Password change', component: PasswordLandingComponent, children: [
+      { path: '', title: 'UiBank-Password request', component: PasswordRequestComponent },
+      { path: 'confirmation/:valid', title: 'UiBank-Password confirmation', component: PasswordRequestConfirmationComponent }
+    ]
+  }
 ];
 
 @NgModule({

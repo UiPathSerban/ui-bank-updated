@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 const routes: Routes = [
-  {path:'', component: WelcomePageComponent}
+  { path: '', title: 'UiBank-Welcome', component: WelcomePageComponent }
 ];
 
 @NgModule({

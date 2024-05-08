@@ -5,10 +5,12 @@ import { HelpComponent } from './help/help.component';
 import { HelpReceivedComponent } from './help-received/help-received.component';
 
 const routes: Routes = [
-  {path: '', component: HelpLandingComponent, children:[
-    {path: '', component: HelpComponent},
-    {path:'confirmation', component: HelpReceivedComponent}
-  ]}
+  {
+    path: '', component: HelpLandingComponent, children: [
+      { path: '', title: 'UiBank-Help', component: HelpComponent },
+      { path: 'confirmation', title: 'UiBank-Confirmation', component: HelpReceivedComponent }
+    ]
+  }
 ];
 
 @NgModule({

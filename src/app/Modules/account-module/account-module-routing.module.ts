@@ -15,15 +15,15 @@ const routes: Routes = [
   {
     path: '', component: AccountComponent, children: [
       { path: '', component: AccountsComponent },
-      { path: 'account-details', component: AccountDetailsComponent },
-      { path: 'account-apply', component: AccountApplyComponent },
-      { path: 'account-details/:accountID/:balance/:accountName', component: AccountDetailsComponent },
-      { path: 'account-create-results/:accountId/:friendlyName', component: AccountCreateResultsComponent },
-      { path: 'dispute-transaction/:accountId', component: DisputeTransactionComponent },
-      { path: 'dispute-transaction/view-details/:accountId', component: DisputeAccountViewComponent },
-      { path: 'transfer-money', component: TransferMoneyComponent },
-      { path: 'transfer-result', component: TransferResultComponent },
-      { path: 'maintenance', component: MaintenanceComponent }
+      { path: 'account-details', title: 'UiBank-Details', component: AccountDetailsComponent },
+      { path: 'account-apply', title: 'UiBank-Apply', component: AccountApplyComponent },
+      { path: 'account-details/:accountID/:balance/:accountName', title: 'UiBank-Details', component: AccountDetailsComponent },
+      { path: 'account-create-results/:accountId/:friendlyName', title: 'UiBank-Creation Result', component: AccountCreateResultsComponent },
+      { path: 'dispute-transaction/:accountId', title: 'UiBank-Dispute', component: DisputeTransactionComponent },
+      { path: 'dispute-transaction/view-details/:accountId', title: 'UiBank-Disputes details', component: DisputeAccountViewComponent },
+      { path: 'transfer-money', title: 'UiBank-Transfer money', component: TransferMoneyComponent },
+      { path: 'transfer-result', title: 'UiBank-Transfer result', component: TransferResultComponent },
+      { path: 'maintenance', title: 'UiBank-Under Maintenance', component: MaintenanceComponent }
     ]
   },
 ];
