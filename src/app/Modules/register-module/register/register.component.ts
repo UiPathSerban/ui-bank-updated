@@ -43,6 +43,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(form: NgForm): any {
+    if (form.invalid) return alert('Please complete all fields before submitting')
     console.log(form.value);
     console.log("Creating new user", this.newUser);
     this.newUser = form.value;

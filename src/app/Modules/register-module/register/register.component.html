@@ -14,12 +14,12 @@
                 basic information.</p>
             <form class="form-box form-container" #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
                 <div class="form-group credentials">
-                    <label class="uibank-label" for="email">Email Address</label>
-                    <input type="text" class="form-control uibank-input" id="email" aria-describedby="email"
+                    <label class="uibank-label" for="email">Email Address*</label>
+                    <input type="text" class="form-control uibank-input" id="email" aria-describedby="email" required
                         [(ngModel)]="this.newUser.email" name="email" placeholder="Enter Email Address">
 
-                    <label class="uibank-label" for="password">Password</label>
-                    <input type="password" class="form-control uibank-input" id="password"
+                    <label class="uibank-label" for="password">Password*</label>
+                    <input type="password" class="form-control uibank-input" id="password" required
                         [(ngModel)]="this.newUser.password" name="password" placeholder="Password">
                 </div>
                 <p class="text-center info">UIBANK IS AN APPLICATION USED ONLY FOR DEMO PURPOSES.
@@ -54,7 +54,7 @@
                                     name="middleName" placeholder="Enter your middle name or initial">
                             </div>
                             <div class="col-md-6 uipath-group">
-                                <label class="uibank-label" for="number">Sex</label>
+                                <label class="uibank-label" for="number">Sex*</label>
                                 <select #gender class="form-control uibank-input" id="sex" required type="text" ngModel
                                     name="gender" [class.select-color]="gender.value ==''">
                                     <option value="" disabled selected hidden>Select your sex</option>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-md-6 uipath-group">
-                                <label class="uibank-label" for="title">Title</label>
+                                <label class="uibank-label" for="title">Title*</label>
                                 <select #title class="form-control uibank-input" id="title" required type="text" ngModel
                                     name="title" [class.select-color]="title.value ==''">
                                     <option value="" disabled selected hidden>Select your title</option>
@@ -75,7 +75,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6 uipath-group">
-                                <label class="uibank-label" for="number">Employment Status</label>
+                                <label class="uibank-label" for="number">Employment Status*</label>
                                 <select #employmentStatus class="form-control uibank-input" id="employmentStatus"
                                     required type="text" ngModel name="employmentStatus"
                                     [class.select-color]="employmentStatus.value ==''">
@@ -94,7 +94,7 @@
                                     placeholder="Enter date in MM/DD/YY format">
                             </div>
                             <div class="col-md-6 uipath-group">
-                                <label class="uibank-label" for="number">Marital Status</label>
+                                <label class="uibank-label" for="number">Marital Status*</label>
                                 <select #maritalStatus class="form-control uibank-input" id="maritalStatus" required
                                     type="text" ngModel name="maritalStatus"
                                     [class.select-color]="maritalStatus.value ==''">
@@ -112,8 +112,8 @@
                                     name="numberOfDependents" placeholder="How many dependents do you claim?">
                             </div>
                             <div class="col-md-6 uipath-group">
-                                <label class="uibank-label" for="username">Username</label>
-                                <input type="text" class="form-control uibank-input" id="username"
+                                <label class="uibank-label" for="username">Username*</label>
+                                <input type="text" class="form-control uibank-input" id="username" required
                                     aria-describedby="username" [(ngModel)]="this.newUser.username" name="username"
                                     placeholder="Enter your username">
                             </div>
