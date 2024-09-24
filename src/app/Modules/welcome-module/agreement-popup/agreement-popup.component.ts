@@ -1,4 +1,8 @@
-import { Component, Inject } from '@angular/core';
+import {
+  Component,
+  Inject,
+  Input,
+} from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -7,6 +11,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./agreement-popup.component.scss']
 })
 export class AgreementPopupComponent {
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any){}
+  @Input() isLoanPopup: boolean;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    this.isLoanPopup = data?.isLoanPopup ?? false;
+  };
 }

@@ -1,15 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { LoanModuleRoutingModule } from './loan-module-routing.module';
-import { LoanHomeComponent } from './loan-home/loan-home.component';
-import { LoanApplicationComponent } from './loan-application/loan-application.component';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LoanComponent } from './loan/loan.component';
-import { LoanLookupComponent } from './loan-lookup/loan-lookup.component';
-import { LoanDetailsComponent } from './loan-details/loan-details.component';
-import { LoanResultComponent } from './loan-result/loan-result.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
+import {
+  LoanApplicationComponent,
+} from './loan-application/loan-application.component';
+import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { LoanHomeComponent } from './loan-home/loan-home.component';
+import { LoanLookupComponent } from './loan-lookup/loan-lookup.component';
+import { LoanModuleRoutingModule } from './loan-module-routing.module';
+import { LoanResultComponent } from './loan-result/loan-result.component';
+import { LoanComponent } from './loan/loan.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { LoanResultComponent } from './loan-result/loan-result.component';
   imports: [
     CommonModule,
     FormsModule,
-    LoanModuleRoutingModule
+    LoanModuleRoutingModule,
+    MatDialogModule
   ]
 })
 export class LoanModuleModule { }

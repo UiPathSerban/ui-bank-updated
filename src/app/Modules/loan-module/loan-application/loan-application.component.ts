@@ -1,9 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { LoanService } from 'src/app/shared/services/loan.service';
-import { Loan } from 'src/app/shared/models/loan';
+import { Location } from '@angular/common';
+import {
+  Component,
+  OnInit,
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router'
-import { Location } from '@angular/common'
+import {
+  MatDialog,
+  MatDialogConfig,
+} from '@angular/material/dialog';
+import { Router } from '@angular/router';
+
+import { Loan } from 'src/app/shared/models/loan';
+import { LoanService } from 'src/app/shared/services/loan.service';
+
+import {
+  AgreementPopupComponent,
+} from '../../welcome-module/agreement-popup/agreement-popup.component';
 
 @Component({
   selector: 'app-loan-application',
@@ -19,7 +31,12 @@ export class LoanApplicationComponent implements OnInit {
 
   }
   public termDates: number[] = [1, 3, 5, 10];
-  constructor(private _location: Location, private route: Router, private loanService: LoanService) { }
+  constructor(
+    private _location: Location,
+    private route: Router,
+    private loanService: LoanService,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit() {
 
@@ -47,6 +64,27 @@ export class LoanApplicationComponent implements OnInit {
 
 
     });
+  }
+  agreementConfirmation(form: NgForm) {
+    const configuration = this.getDialogConfiguration();
+    this.dialog.open(
+      AgreementPopupComponent,
+      {
+        ...configuration,
+        data: { isLoanPopup: true }
+      }
+    ).afterClosed()
+      .subscribe(
+        (accepted: boolean) => { if (accepted) { this.submitApplication(form) } }
+      )
+
+  }
+  private getDialogConfiguration() {
+    const isMobile = window.innerWidth <= 767
+    const configuration = new MatDialogConfig();
+    configuration.width = isMobile ? "100%" : "45%"
+    configuration.maxWidth = isMobile ? "100vw" : "80vw"
+    return configuration
   }
 
 }

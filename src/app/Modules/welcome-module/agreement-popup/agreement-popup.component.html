@@ -5,15 +5,29 @@
         <button mat-dialog-close class="close-button">&#10005;</button>
     </div>
     <div class="container">
-        <p class="medium-text">UiBank is an application used only for demo purposes. It doesn't require real data,
+        <p *ngIf="!isLoanPopup" class="medium-text">UiBank is an application used only for demo purposes. It doesn't
+            require real data,
             except for the email address, which will be used for official communications and password recovery
             purposes.<br>Please see here the full <a style="color: black;"
                 href="https://www.uipath.com/legal/privacy-policy" target="_blank">Privacy
                 Policy</a>
 
         </p>
-        <button class="btn center-button btn-black" [mat-dialog-close]="true">I agree to the Privacy Policy
+        <p *ngIf="isLoanPopup" class="medium-text"> This site uses the information from your loan application form to
+            process your request.
+            By clicking “Accept,” you consent to the use of your data for this purpose.
+            You can review or adjust your settings before accepting.
+        </p>
+        <button *ngIf="!isLoanPopup" class="btn center-button btn-black" [mat-dialog-close]="true">I agree to the
+            Privacy Policy
             <strong>&rarr;</strong></button>
+        <div *ngIf="isLoanPopup" style="display: flex; flex-direction:row;">
+            <button class="btn center-button btn-orange" id="accept_agreement" [mat-dialog-close]="true"
+                style="margin-right: 2rem;">Accept
+                <strong>&rarr;</strong></button>
+            <button class="btn center-button btn-black" id="decline_agreement" [mat-dialog-close]="true"
+                style="margin-left: 2rem;">Decline</button>
+        </div>
         <p class="small-text text-black" style="margin-bottom: 1rem;">
             If you want your data deleted at any time, please fill in this <a
                 href="https://www.uipath.com/legal/trust-and-security/report/delete-account-data" target="_blank">
