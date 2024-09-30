@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
 import {
+  AfterViewInit,
   Component,
+  OnDestroy,
   OnInit,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -10,6 +12,11 @@ import {
 } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
+import {
+  Subject,
+  takeUntil,
+  timer,
+} from 'rxjs';
 import { Loan } from 'src/app/shared/models/loan';
 import { LoanService } from 'src/app/shared/services/loan.service';
 
@@ -22,7 +29,8 @@ import {
   templateUrl: './loan-application.component.html',
   styleUrls: ['./loan-application.component.scss']
 })
-export class LoanApplicationComponent implements OnInit {
+export class LoanApplicationComponent implements OnInit, AfterViewInit, OnDestroy {
+  private destroyed$: Subject<null> = new Subject();
   public currentLoan: Loan;
   public response = {
     accepted: true,
@@ -41,6 +49,14 @@ export class LoanApplicationComponent implements OnInit {
   ngOnInit() {
 
   }
+  ngAfterViewInit() {
+    timer(500).pipe(
+      takeUntil(this.destroyed$)
+    )
+      .subscribe(this.agreementConfirmation)
+
+  }
+
 
   backButton() {
     this._location.back();
@@ -65,7 +81,7 @@ export class LoanApplicationComponent implements OnInit {
 
     });
   }
-  agreementConfirmation(form: NgForm) {
+  agreementConfirmation = () => {
     const configuration = this.getDialogConfiguration();
     this.dialog.open(
       AgreementPopupComponent,
@@ -75,7 +91,7 @@ export class LoanApplicationComponent implements OnInit {
       }
     ).afterClosed()
       .subscribe(
-        (accepted: boolean) => { if (accepted) { this.submitApplication(form) } }
+        (accepted: boolean) => { if (accepted) console.log('agreement accepted') }
       )
 
   }
@@ -85,6 +101,9 @@ export class LoanApplicationComponent implements OnInit {
     configuration.width = isMobile ? "100%" : "45%"
     configuration.maxWidth = isMobile ? "100vw" : "80vw"
     return configuration
+  }
+  ngOnDestroy() {
+    this.destroyed$.complete();
   }
 
 }

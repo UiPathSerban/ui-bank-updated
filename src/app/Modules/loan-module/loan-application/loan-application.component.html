@@ -6,7 +6,7 @@
         <h1 class="text-center text-white title">Loan application</h1>
         <p class="text-center text-white">Fill in the details below in order to proceed with loan application.</p>
 
-        <form class="form-box text-left form-container" #loanForm="ngForm" (ngSubmit)="agreementConfirmation(loanForm)">
+        <form class="form-box text-left form-container" #loanForm="ngForm" (ngSubmit)="submitApplication(loanForm)">
           <div class="form-group">
             <label for="loanEmail" class="uibank-label">Email Address of Requester</label>
             <input type="email" class="form-control uibank-input" id="email" ngModel name="email"
